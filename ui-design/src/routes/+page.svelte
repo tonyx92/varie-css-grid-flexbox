@@ -2,6 +2,7 @@
 import star from '../assets/Star.svg'
 import search from '../assets/Frame.svg'
 import reviews from "../data/reviews.json"
+import Starsystem from '../components/Starsystem.svelte'
 
 const total = reviews.length;
 const stars = [1,2,3,4,5];
@@ -28,71 +29,18 @@ const stars = [1,2,3,4,5];
             <img src={search} aria-label="run search">
         </button>
     </form>
-    <div class="reviews">
-        <p>Reviews</p>
-            <ul>
-                <li>
-                    <div class="reviews-container">
-                        <div class="riga">
-                            <span>5</span>
-                            <img src={star} alt="">
-                            <div class="rectangle"/>
-                            <span>106</span>
-                        </div>
-                    </div>
-                </li>
-            <ul/>
-            <ul>
-                <li>
-                    <div class="reviews-container">
-                        <div class="riga">
-                            <span>4</span>
-                            <img src={star} alt="">
-                            <div class="rectangle"/>
-                            <span>32</span>
-                        </div>
-                    </div>
-                </li>
-            <ul/>
-            <ul>
-                <li>
-                    <div class="reviews-container">
-                        <div class="riga">
-                            <span>3</span>
-                            <img src={star} alt="">
-                            <div class="rectangle"/>
-                            <span>0</span>
-                        </div>
-                    </div>
-                </li>
-            <ul/>
-            <ul>
-                <li>
-                    <div class="reviews-container">
-                        <div class="riga">
-                            <span>2</span>
-                            <img src={star} alt="">
-                            <div class="rectangle"/>
-                            <span>0</span>
-                        </div>
-                    </div>
-                </li>
-            <ul/>
-            <ul>
-                <li>
-                    <div class="reviews-container">
-                        <div class="riga">
-                            <span>1</span>
-                            <img src={star} alt="">
-                            <div class="rectangle"/>
-                            <span>0</span>
-                        </div>
-                    </div>
-                </li>
-            <ul/>
+    <div class="flex-container-stars">
+        <p class="reviews-title">Reviews</p>
+
+        <Starsystem voto=5 punteggio=106 larghezza_giallo=329/>
+        <Starsystem voto=4 punteggio=32 larghezza_giallo=127/>
+        <Starsystem voto=3 punteggio=0 />
+        <Starsystem voto=2 punteggio=0 />
+        <Starsystem voto=1 punteggio=0 />
     </div>
-    <button type="button" class='btn'>Write a review</button>
-</div>
+
+<button type="button" class='btn'>Write a review</button>
+ </div>
 
 
 <style>
@@ -265,20 +213,21 @@ header h2{
   box-shadow: 0 0 0 2px hsl(var(--neutral1)), 0 0 0 5px hsl(var(--muted));
 }
 
-.reviews {
+.flex-container-stars {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-top: -20px;
+}
+.reviews-title{
+    
+    
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
     gap: 16px;
-    place-items: center;
 }
-
-.rectangle{
-    height: 10px;
-    width: 426.355px;
-    background-color: #EEE;
-    border: 1px solid #C9C9C9;
-    border-radius: 23px;
-}
-
 
 .btn {
     
