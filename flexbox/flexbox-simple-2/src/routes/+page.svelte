@@ -1,0 +1,113 @@
+
+<h1>Flexbox made simple</h1>
+<section class="cards">
+  <h2>Some cards</h2>
+  <div class="columns">
+    <article class="card">
+      <h3 class="card__title">Fun stuff</h3>
+      <p>Repudiandae corporis voluptatibus praesentium sequi.</p>
+    </article>
+    <article class="card gradient-shadow">
+      <h3 class="card__title">Fun stuff</h3>
+      <p>Repudiandae corporis voluptatibus praesentium sequi.</p>
+    </article>
+    <article class="card gradient-shadow">
+      <h3 class="card__title">An longer title than the others</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore, sint. Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+    </article>
+  </div>
+</section>
+
+<style>
+.columns {
+}
+
+.columns{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: 10px solid firebrick;
+}
+
+@media(min-width: 750px){
+    .columns{
+        flex-direction: row;
+    }
+}
+
+.columns > * {
+    width: 100%;
+    
+}
+
+/* .columns {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 1em;
+} */
+
+/* .columns {
+  display: flex;
+  gap: 1em;
+}
+
+.columns > *:first-child {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.columns > *:last-child {
+  flex-grow: 1;
+} */
+
+/* general styling */
+
+.card {
+  padding: 1rem;
+  background: hsl(var(--clr-green));
+}
+
+.tags {
+  display: flex;
+  gap: 1em;
+  list-style: none;
+  font-size: 0.725rem;
+}
+
+.tag {
+  background: hsl(0 0% 100% / 0.4);
+  padding: 0.25rem 0.5rem;
+}
+
+:root {
+  --clr-orange: 7 100% 63%;
+  --clr-blue: 239 100% 50%;
+  --clr-green: 125 50% 50%;
+  --spacer: 2rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  padding: var(--spacer);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+}
+
+h1 {
+  margin-bottom: 1em;
+  font-size: clamp(2rem, 5vw + 1rem, 4rem);
+  line-height: 1.1;
+  color: hsl(var(--clr-orange));
+  text-shadow: 0.05em 0.05em 0 hsl(0 0% 0% / 0.7);
+}
+
+
+</style>

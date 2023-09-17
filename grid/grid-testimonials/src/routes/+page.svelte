@@ -256,6 +256,13 @@ h3 {
 
   display: grid;
   gap: 1.5rem;
+  grid-auto-columns: 1fr;
+  grid-template-areas: 
+  'one'
+  'two'
+  'three'
+  'four'
+  'five';
 
 
   padding-block: 2rem;
@@ -270,8 +277,39 @@ h3 {
   box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
 }
 
+.testimonial:nth-child(1){
+    grid-area: one;
+}
+.testimonial:nth-child(2){
+    grid-area: two;
+}
+.testimonial:nth-child(3){
+    grid-area: three;
+}
+.testimonial:nth-child(4){
+    grid-area: four;
+}
+.testimonial:nth-child(5){
+    grid-area: five;
+}
+
+@media (min-width: 30em){
+    .testimonial-grid{
+        grid-template-areas:
+            'one one'
+            'two five'
+            'three five'
+            'four five';
+    }
+
+}
+
 @media (min-width: 50em){
-    
+    .testimonial-grid{
+        grid-template-areas:
+            'one one two five'
+            'three four four five';
+    }
 
 }
 

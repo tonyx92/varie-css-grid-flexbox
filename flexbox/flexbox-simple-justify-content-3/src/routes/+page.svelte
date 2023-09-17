@@ -23,7 +23,9 @@
 
 .nav-list{
    display: flex;
-   flex-wrap: wrap;
+   
+   justify-content: space-between;
+
    gap: 1rem;
 
     margin: 0;
@@ -32,8 +34,8 @@
 }
 
 .nav-list li {
-    flex-grow: 1;
-   flex-shrink: 1;
+     /* flex-grow: 0;
+   flex-shrink: 0;  */
 }
 
 
