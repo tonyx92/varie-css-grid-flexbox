@@ -2,26 +2,48 @@
 import './/css/styles.css';
 import logo from '../assets/logo.svg'
 import illustration from '../assets/illustration-intro.svg'
+import icon_hamburger from '../assets/icon-hamburger.svg'
+import icon_close from '../assets/icon-close.svg'
+import  main from '../routes/javascript/main.js'
+import { onMount } from 'svelte';
+
+
+onMount(() => {
+    main();
+})
+
+
+
+
+
+
 </script>
 <body>
     <header class="primary-header">
         <div class="container">
+            <div class="nav-wrapper">
             <a href="#"><img src={logo} alt="Manage"></a>
-            <nav class="primary-navigation">
-                <ul role="list" class="nav-list">
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Product</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Community</a></li>
-                </ul>
-            </nav>
-            <button class="button">Get Started</button>
+                <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                    <img class="icon_hamburger" src={icon_hamburger} alt="" aria-hidden="true">
+                    <img class="icon_close" src={icon_close} alt="" aria-hidden="true">
+                    <span class="visually-hidden">Menu</span>
+                </button>
+                <nav class="primary-navigation" id="primary-navigation">
+                    <ul aria-label="primary" role="list" class="nav-list">
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Product</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </nav>
+                <button class="button | display-sm-none display-md-inline-flex">Get Started</button>
+            </div>
         </div>
     </header>
 
     <main>
-        <section>
+        <section class="padding-block-900">
             <div class="container">
                 <div class="even-columns">
                     <div><h1 class="fs-primary-heading fw-bold"></h1>
@@ -36,7 +58,7 @@ import illustration from '../assets/illustration-intro.svg'
             </div>
         </section>
 
-        <section>
+        <section class="padding-block-900">
             <div class="container">
                 <div class="even-columns">
                     <div>
@@ -71,13 +93,13 @@ import illustration from '../assets/illustration-intro.svg'
             </div>
         </section>
 
-        <section class="carousel">
-            <h2 class="fs-secondary-heading">What they've said</h2>
+        <section class="carousel | padding-block-700">
+            <h2 class="fs-secondary-heading fw-bold">What they've said</h2>
             <!-- Carosello qua!  -->
             <button class="button">Get Started</button>
         </section>
 
-        <section class="cta | bg-primary-400 text-neutral-100">
+        <section class="cta | padding-block-700 bg-accent-400 text-neutral-100">
             <div class="container">
                 <div class="even-columns">
                     <div>
@@ -91,11 +113,11 @@ import illustration from '../assets/illustration-intro.svg'
         </section>
     </main>
 
-    <footer class="bg-neutral-900 text-neutral-100">
+    <footer class="padding-block-700 bg-neutral-900 text-neutral-100">
         <div class="container">
             <div class="even-columns">
                 <div>
-                    <a href=""><img src={logo} alt="Manage"></a>
+                    <a href="#"><img src={logo} alt="Manage"></a>
                     <ul role="list" aria-label="Social links">
                         <li><a aria-label="facebook" href="#"></a></li>
                         <li><a aria-label="youtube" href="#"></a></li>
